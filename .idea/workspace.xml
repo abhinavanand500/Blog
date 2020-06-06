@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4af1d075-684c-45b3-b808-02bee6c3d98f" name="Default Changelist" comment="" />
+    <list default="true" id="4af1d075-684c-45b3-b808-02bee6c3d98f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -18,14 +25,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cxcB3O0VJtDieyc3uEbqLdUZNC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/home" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Blog" type="Python.DjangoServer" factoryName="Django server">
@@ -63,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591473546073</updated>
-      <workItem from="1591473551824" duration="629000" />
+      <workItem from="1591473551824" duration="2635000" />
     </task>
     <servers />
   </component>
@@ -71,21 +87,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591474002740">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591475479081">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591474002740" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591474002736">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591475479081" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591475479079">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591474002736" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591474002732">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591475479079" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591475479079">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591474002732" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591474002738">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591475479079" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591475479080">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591474002738" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591475479080" />
   </component>
 </project>
