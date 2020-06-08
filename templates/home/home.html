@@ -1,14 +1,41 @@
 {% extends 'base.html' %}
+  {% block css %}
+      .jumbotron{
+        background-color : #DC7633;
+      }
+  {% endblock css %}
 {% block title %} Home {% endblock title %}
 {% block activeHome %} active {% endblock activeHome %}
 {% block body %}
     <div class="container">
         <div class="jumbotron my-3">
-          <h1 class="display-4">Welcome to iCoder</h1>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <h1 class="display-4">Welcome to iCoder Blog</h1>
+          <p class="lead">Write whatever you want to write</p>
           <hr class="my-4">
           <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Go to Blog</a>
+          <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
         </div>
+    </div>
+
+    <div class="container">
+        <hr>
+        <h3>Our Popular Blog</h3>
+
+            <div class="row mb-2 my-4">
+            <div class="col-md-12">
+              <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">Article by {{ post.author }}</strong>
+                  <h3 class="mb-0">{{ post.title }}</h3>
+                  <div class="mb-1 text-muted">{{ post.timestamp }}</div>
+                    <br>
+                  <p class="card-text mb-auto">{{ post.content | truncatechars:300 }}</p>
+                  <div class="my-3">
+                    <a href="/blog/{{ post.slug }}" role="button" class="btn btn-primary">Continue reading</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 {% endblock body %}

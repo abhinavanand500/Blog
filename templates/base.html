@@ -4,10 +4,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=Karla&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+      <style type="text/css">
+        body{
+      background-color : #FDF2E9  ;
+        font-family: 'Karla', sans-serif;
+      }
+        {% block css %}
 
+        {% endblock css %}
+    </style>
     <title>
         {% block title %}
 
@@ -16,7 +23,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">iBlog</a>
+      <a class="navbar-brand" href="/">iCoder</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,10 +43,22 @@
             <a class="nav-link" href="/contact">Contact</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0 mr-2" action="/search" method="get">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
+          <button class="btn btn-outline-success my-2 my-sm-2 {% block activeSearch %} {% endblock activeSearch %}" type="submit">Search</button>
         </form>
+
+            <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success mr-2 ml-2" data-toggle="modal" data-target="#signinModal">
+          Login
+        </button>
+
+        <button type="button" class="btn btn-success mr-2 ml-2" data-toggle="modal" data-target="#signupModal">
+          SignUp
+        </button>
+
+
+
       </div>
      </nav>
         {% for message in messages %}
@@ -50,6 +69,82 @@
           </button>
         </div>
         {% endfor %}
+
+
+<!-- Sign Up Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signupModal">SignUp Here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="/handleSignup" method="post">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                  </div>
+                  <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname">
+                  </div>
+                  <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname">
+                  </div>
+                  <div class="form-group">
+                    <label for="emailid">Email</label>
+                    <input type="email" class="form-control" id="emailid" name="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword2">Confirm your Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" name="pass2">
+                  </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+{#        Login MOdal#}
+     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signinModal">Login Here</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="user">Username</label>
+                    <input type="text" class="form-control" id="user" name="username">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword" name="pass">
+                  </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
     {% block body %}
     {% endblock body %}

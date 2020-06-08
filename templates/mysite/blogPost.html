@@ -1,6 +1,33 @@
 {% extends 'base.html' %}
+
 {% block title %} BlogPost {% endblock title %}
+{% block css %}
+.aa{
+    text-align : justify;
+    font-family: 'Karla', sans-serif;
+    word-spacing: 3px;
+    line-height: 1.6;
+    padding-left: 50pt;
+    padding-top: 50pt;
+    padding-bottom: 50pt;
+    padding-right: 50pt;
+    font-size : 15pt;
+    background-color : #F4ECF7;
+    }
+{% endblock css %}
+
 {% block activePost %} active {% endblock activePost %}
 {% block body %}
-    <h1>Blog Post</h1>
+    <div class="container mt-5">
+        <div class="blog-post">
+            <h2 class="blog-post-title">{{ post.title }}</h2>
+            <p class="blog-post-meta">{{ post.timestamp }} by <a href="#">{{ post.author }}</a></p>
+            <hr>
+            <br>
+            <div class="aa">
+                <p>{{ post.content }}</p>
+            </div>
+
+        </div>
+    </div>
 {% endblock body %}
