@@ -43,12 +43,26 @@
             <a class="nav-link" href="/contact">Contact</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0 mr-2" action="/search" method="get">
+        <div class="ml-auto form-inline ">
+        <form class="my-2 my-lg-0 mr-2" action="/search" method="get">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
           <button class="btn btn-outline-success my-2 my-sm-2 {% block activeSearch %} {% endblock activeSearch %}" type="submit">Search</button>
         </form>
 
             <!-- Button trigger modal -->
+        {% if user.is_authenticated %}
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Welcome {{ request.user }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/handleLogout">Logout</a>
+                    </div>
+                  </li>
+            </ul>
+
+        {% else %}
         <button type="button" class="btn btn-success mr-2 ml-2" data-toggle="modal" data-target="#signinModal">
           Login
         </button>
@@ -59,6 +73,10 @@
 
 
 
+        {% endif %}
+
+
+        </div>
       </div>
      </nav>
         {% for message in messages %}
@@ -86,27 +104,27 @@
                     {% csrf_token %}
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <input type="text" class="form-control" id="username" name="username" required>
                   </div>
                   <div class="form-group">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" id="fname" name="fname">
+                    <input type="text" class="form-control" id="fname" name="fname" required>
                   </div>
                   <div class="form-group">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" id="lname" name="lname">
+                    <input type="text" class="form-control" id="lname" name="lname" required>
                   </div>
                   <div class="form-group">
                     <label for="emailid">Email</label>
-                    <input type="email" class="form-control" id="emailid" name="email">
+                    <input type="email" class="form-control" id="emailid" name="email" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="pass1" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword2">Confirm your Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" name="pass2">
+                    <input type="password" class="form-control" id="exampleInputPassword2" name="pass2" required>
                   </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -129,14 +147,15 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form action="/handleLogin" method="post">
+                    {% csrf_token %}
                   <div class="form-group">
                     <label for="user">Username</label>
-                    <input type="text" class="form-control" id="user" name="username">
+                    <input type="text" class="form-control" id="loginuser" name="loginusername">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" name="pass">
+                    <label for="loginpass">Password</label>
+                    <input type="password" class="form-control" id="loginpass" name="loginpass">
                   </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Login</button>

@@ -30,4 +30,50 @@
 
         </div>
     </div>
+    <hr>
+    <div class="container">
+
+{#        <form action="/blog/postComment" method="post">#}
+{#            {% csrf_token %}#}
+{#            Comment :  <input type="text" name="comment" placeholder="Enter your Comment here"/>#}
+{#            <input type="hidden" name="postSno" value="{{ post.sno }}" />#}
+{#            <input type="submit" value="Submit"/>#}
+{#        </form>#}
+
+        <form action="/blog/postComment" method="post">
+             {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1"><h3>Post Comment</h3></label>
+            <input type="text" name="comment"class="form-control" id="exampleInputEmail1" placeholder="Enter your Comment here"/>
+          </div>
+          <input type="hidden" name="postSno" value="{{ post.sno }}" />
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+
+        {% for comment in comments %}
+             <div class="row my-3">
+                <div class="col-md-2">
+                    Image Here
+                </div>
+                <div class="col-md-10">
+                    <b> {{ comment.user.username }} : </b> {{ comment.comment }}
+                </div>
+            </div>
+        {% endfor %}
+
+{##}
+{#        <h3>Comments</h3>#}
+{#            <div class="row my-3">#}
+{#                <div class="col-md-2">#}
+{#                    Image Here#}
+{#                </div>#}
+{#                <div class="col-md-10">#}
+{#                    Comment Here#}
+{#                </div>#}
+{#            </div>#}
+    </div>
+    <br>
+    <br>
+    <br>
 {% endblock body %}

@@ -1,13 +1,12 @@
 from django.shortcuts import render,redirect
 from home.models import Contact
 from mysite.models import Post
+from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.models import User
-
-# Create your views here.
 from django.http import HttpResponse
 from django.contrib import messages
 
-# Create your views here.
+# HTML pages
 def home(request):
     post = Post.objects.first()
     context = {'post' : post}
@@ -46,6 +45,7 @@ def search(request):
     params = {'allpost': allpost, 'query' : query}
     return render(request,'home/search.html', params)
 
+# API's
 def handleSignup(request):
     if request.method=='POST':
         username = request.POST['username']
@@ -54,6 +54,19 @@ def handleSignup(request):
         email = request.POST['email']
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
+
+        if(len(username)>10):
+            messages.error(request, "Username length must be less than 10 character.")
+            return redirect('home')
+
+        if not username.isalnum():
+            messages.error(request, "Username should only contain character or numberå.")
+            return redirect('home')
+
+        if(pass1!=pass2):
+            messages.error(request, "Password not matched. Please try again")
+            return redirect('home')
+
         myuser = User.objects.create_user(username,email, pass1)
         myuser.first_name = fname
         myuser.last_name = lname
@@ -62,3 +75,25 @@ def handleSignup(request):
         return redirect('home')
     else:
         return HttpResponse("404 not Found")
+
+def handleLogin(request):
+    if request.method=='POST':
+        loginusername = request.POST['loginusername']
+        loginpassword = request.POST['loginpass']
+        user = authenticate(username = loginusername, password = loginpassword)
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Successfully Logged In. Welcome!")
+            return redirect('home')
+        else:
+            messages.error(request, "Invalid Credentials. Please try again")
+            return redirect('home')
+    return HttpResponse("Error 404 . Login through Webapp")
+
+def handleLogout(request):
+    logout(request)
+    messages.success(request, "Successfully Logged Out. Visit after website again!. If you have any issue then post it on contact tab. Thankyou!")
+    return redirect('home')
+
+
+
