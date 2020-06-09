@@ -8,7 +8,7 @@ from django.contrib import messages
 
 # HTML pages
 def home(request):
-    post = Post.objects.first()
+    post = Post.objects.last()
     context = {'post' : post}
     return render(request, 'home/home.html', context)
 
