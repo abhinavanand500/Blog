@@ -14,10 +14,10 @@ def home(request):
 
 def contact(request):
     if(request.method=='POST'):
-        name = request.POST['name'];
-        email = request.POST['email'];
-        phone = request.POST['phone'];
-        content = request.POST['content'];
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        content = request.POST['content']
         if(len(name)<2 or len(email)<2 or len(phone)<10 or len(content)<2):
             messages.error(request, "Please fill this form Correctly")
         else:

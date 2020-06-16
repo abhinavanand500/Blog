@@ -5,7 +5,10 @@ from django.contrib import messages
 from mysite.templatetags import getDict
 # Create your views here.
 def blogHome(request):
-    allPost = Post.objects.all()
+    allPost = Post.objects.all().reverse()
+    print(allPost)
+    allPost.reverse()
+    print(allPost)
     context = {'allPost': allPost}
     return render(request, 'mysite/blog.html', context)
 
