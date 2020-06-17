@@ -5,7 +5,7 @@ from django.contrib import messages
 from mysite.templatetags import getDict
 # Create your views here.
 def blogHome(request):
-    allPost = Post.objects.all().reverse()
+    allPost = Post.objects.all().order_by('-timestamp')
     print(allPost)
     allPost.reverse()
     print(allPost)
@@ -14,6 +14,8 @@ def blogHome(request):
 
 def blogPost(request , slug):
     post = Post.objects.filter(slug=slug).first()
+    post.view = post.view+1
+    post.save()
     comments = BlogComment.objects.filter(post=post, parent=None)
     replies = BlogComment.objects.filter(post=post).exclude(parent=None)
     repDict={}

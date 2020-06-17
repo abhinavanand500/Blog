@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} Search Results {% endblock title %}
+{% block css %}
+    body{
+      background-color : #FDF2E9  ;
+        font-family: 'Karla', sans-serif;
+      }
+{% endblock css %}
+
 {% block activeSearch %} active {% endblock activeSearch %}
 
 {% block body %}
@@ -23,7 +30,7 @@
                   <strong class="d-inline-block mb-2 text-primary">Article by {{ post.author }}</strong>
                   <h3 class="mb-0">{{ post.title }}</h3>
                   <div class="mb-1 text-muted">{{ post.datetime }}</div>
-                  <p class="card-text mb-auto">{{ post.content | truncatechars:500 }}</p>
+                  <p class="card-text mb-auto">{{ post.content | safe | truncatechars:500 }}</p>
                   <div class="my-3">
                     <a href="/blog/{{ post.slug }}" role="button" class="btn btn-primary">Continue reading</a>
                   </div>

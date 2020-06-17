@@ -2,6 +2,10 @@
 
 {% block title %} BlogPost {% endblock title %}
 {% block css %}
+    body{
+      background-color : #FDF2E9  ;
+        font-family: 'Karla', sans-serif;
+      }
 .aa{
 text-align : justify;
 font-family: 'Karla', sans-serif;
@@ -25,7 +29,8 @@ background-color : #F4ECF7;
 <div class="container mt-5">
     <div class="blog-post">
         <h2 class="blog-post-title">{{ post.title }}</h2>
-        <p class="blog-post-meta">{{ post.timestamp }} by <a href="#">{{ post.author }}</a></p>
+
+        <p class="blog-post-meta">{{ post.timestamp }} by <a href="#">{{ post.author }}</a><span > ({{ post.view }} views)</span></p>
         <hr>
         <br>
         <div class="aa">
