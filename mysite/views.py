@@ -6,9 +6,6 @@ from mysite.templatetags import getDict
 # Create your views here.
 def blogHome(request):
     allPost = Post.objects.all().order_by('-timestamp')
-    print(allPost)
-    allPost.reverse()
-    print(allPost)
     context = {'allPost': allPost}
     return render(request, 'mysite/blog.html', context)
 
@@ -24,8 +21,6 @@ def blogPost(request , slug):
             repDict[reply.parent.sno] = [reply]
         else:
             repDict[reply.parent.sno].append(reply)
-
-        print(repDict)
     context = {'post':post, 'comments':comments , 'user' : request.user, 'replyDict' : repDict}
     return render(request, 'mysite/blogPost.html',context)
 
