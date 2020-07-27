@@ -96,4 +96,19 @@ def handleLogout(request):
     return redirect('home')
 
 
-
+def adminside(request):
+    user=request.user
+    if(user.is_superuser):
+        if(request.method=='POST'):
+            title=request.POST['title']
+            author= request.POST['author']
+            slug=request.POST['slug']
+            content=request.POST['content']
+            post = Post(title=title,author=author,slug=slug,content=content)
+            post.save()
+            messages.success(request,"Your Post is Published Successfully.")
+            return redirect('home')            
+        return render(request,'mysite/writing.html')
+    else:
+        messages.error(request, "You are not authorised to visit this page")
+        return redirect('home')

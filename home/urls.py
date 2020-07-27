@@ -9,5 +9,6 @@ urlpatterns = [
     path('handleSignup',views.handleSignup,name='handleSignup'),
     path('handleLogin',views.handleLogin,name='handleLogin'),
     path('handleLogout',views.handleLogout,name='handleLogout'),
+    path('adminside', views.adminside),
 
 ]

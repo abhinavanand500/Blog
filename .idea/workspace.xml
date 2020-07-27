@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4af1d075-684c-45b3-b808-02bee6c3d98f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
@@ -130,6 +133,13 @@
       <workItem from="1592378735209" duration="568000" />
       <workItem from="1592760168949" duration="86000" />
       <workItem from="1593505898300" duration="564000" />
+      <workItem from="1594895096154" duration="795000" />
+      <workItem from="1594896357560" duration="4000" />
+      <workItem from="1595048139335" duration="3651000" />
+      <workItem from="1595082030891" duration="252000" />
+      <workItem from="1595171468495" duration="490000" />
+      <workItem from="1595246384325" duration="3000" />
+      <workItem from="1595249623295" duration="665000" />
     </task>
     <servers />
   </component>
@@ -141,22 +151,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1591608349931" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1592760274005">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1595082306484">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1592760274005" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1592760274003">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595082306484" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1595082306482">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1592760274003" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1592760274002">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595082306482" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1595082306481">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1592760274002" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1592760274004">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595082306481" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1595082306483">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1592760274004" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595082306483" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1591626539796">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

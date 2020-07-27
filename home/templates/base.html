@@ -7,23 +7,29 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css2?family=Karla&family=PT+Sans+Narrow&display=swap" rel="stylesheet">
-    {% block trailwind %}
-
-        {% endblock trailwind %}
-      <style type="text/css">
-        {% block css %}
-
-        {% endblock css %}
-    </style>
+        
+     
     <title>
         {% block title %}
 
         {% endblock title %}
     </title>
+    {% block trailwind %}
+
+        {% endblock trailwind %}
+
+       <style type="text/css">
+        {% block css %}
+        
+        {% endblock css %}
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">iCoder</a>
+      {% comment %} <a href="https://imgur.com/nSO69S3"><img src="https://imgur.com/nSO69S3" title="source: imgur.com" height=50px /></a> {% endcomment %}
+      {% comment %} <a href="https://i.imgur.com/nSO69S3.jpg"><img src="https://i.imgur.com/nSO69S3.jpg" title="source: imgur.com"  height=50px /></a> {% endcomment %}
+      <a href="https://i.imgur.com/XnsEiw3.jpg"><img src="https://i.imgur.com/XnsEiw3.jpg" title="source: imgur.com" height="50px"/></a>
+      <a class="navbar-brand mx-2" href="/">BLOGGIFY</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,6 +39,11 @@
           <li class="nav-item {% block activeHome %} {% endblock activeHome %}">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
+          {% if request.user.is_superuser %}
+          <li class="nav-item {% block activeAdmin %} {% endblock activeAdmin %}">
+            <a class="nav-link" href="/adminside">Admin</a>
+          </li>
+          {% endif %}
           <li class="nav-item {% block activeAbout %} {% endblock activeAbout %}">
             <a class="nav-link" href="/about">About</a>
           </li>

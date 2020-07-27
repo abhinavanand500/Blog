@@ -14,7 +14,7 @@
 {% block body %}
     <div class="container">
         <div class="jumbotron my-3">
-          <h1 class="display-4">Welcome to iCoder Blog</h1>
+          <h1 class="display-4">Welcome to BLOGGIFY</h1>
           <p class="lead">Write whatever you want to write</p>
           <hr class="my-4">
           <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -34,7 +34,7 @@
                   <h3 class="mb-0">{{ post.title }}</h3>
                   <div class="mb-1 text-muted">{{ post.timestamp }}</div>
                     <br>
-                  <p class="card-text mb-auto">{{ post.content |safe| truncatechars:300 }}</p>
+                  <p class="card-text mb-auto">{{ post.content |safe| truncatechars:500 }}</p>
                   <div class="my-3">
                     <a href="/blog/{{ post.slug }}" role="button" class="btn btn-primary">Continue reading</a>
                   </div>

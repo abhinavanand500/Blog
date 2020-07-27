@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %} Write your blog Here {% endblock title %}
+{% block css %}
+    body{
+      background-color : #FDF2E9  ;
+        font-family: 'Karla', sans-serif;
+      }
+{% endblock css %}
+{% block trailwind %}
+            <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        width: 1200,
+    height: 600,
+    plugins: [
+      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+      'table emoticons template paste help'
+    ],
+    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+      'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+      'forecolor backcolor emoticons | help',
+    menu: {
+      favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
+    },
+    menubar: 'favs file edit view insert format tools table help',
+    content_css: 'css/content.css'
+      });
+
+    </script>
+{% endblock trailwind %}
+
+ {% block js %}
+    <script>
+         bt.addEventListener('click', (e)=>{
+             console.log(e);
+          myHtml.innerText = tinyMCE.get('mytextarea').getContent();
+      })
+  </script>
+ {% endblock js %}
+{% block activeAdmin %} active {% endblock activeAdmin %}
+
+{% block body %}
+    <div class="container my-3">
+        <form action="/adminside" method="POST">
+        {% csrf_token %}
+                <div class="form-row my-5">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Title</label>
+                        <input type="text" class="form-control" id="inputEmail4" name="title">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Author</label>
+                        <input type="text" class="form-control" id="inputPassword4" name="author">
+                    </div>
+                </div>
+                <div class="form-group col-md-12 my-5">
+                    <label for="inputEmail">Slug(Write something to make this post identical)</label>
+                    <input type="text" class="form-control" id="inputEmail" name="slug">
+                </div>
+                <hr>
+                    <h1>Write Your Content here</h1>
+                    <textarea id="mytextarea" name="content">Hello, World!</textarea>
+                <br>
+                <button class="btn btn-primary my-5" type="submit">POST YOUR BLOG</button>
+        </form>
+                    
+    </div>
+{% endblock body %}

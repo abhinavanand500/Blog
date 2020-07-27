@@ -30,7 +30,7 @@
                   <strong class="d-inline-block mb-2 text-primary">Article by {{ post.author }} ({{ post.view }} Views)</strong>
                   <h3 class="mb-0">{{ post.title }}</h3>
                   <div class="mb-1 text-muted">{{ post.datetime }}</div>
-                    <p class="card-text mb-auto"><div class="preview"> {{ post.content |safe| truncatechars:200 }}</div></p>
+                    <p class="card-text mb-auto"><div class="preview"> {{ post.content |safe| truncatechars:500 }}</div></p>
                   <div class="my-3">
                     <a href="/blog/{{ post.slug }}" role="button" class="btn btn-primary">Continue reading</a>
                   </div>

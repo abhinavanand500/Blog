@@ -24,6 +24,8 @@ def blogPost(request , slug):
     context = {'post':post, 'comments':comments , 'user' : request.user, 'replyDict' : repDict}
     return render(request, 'mysite/blogPost.html',context)
 
+
+
 def postComment(request):
     if request.method=="POST":
         comment = request.POST.get('comment')
@@ -42,3 +44,4 @@ def postComment(request):
             messages.success(request, "Your reply has been posted Successfully")
 
     return redirect(f'/blog/{post.slug}')
+
